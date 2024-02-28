@@ -102,7 +102,7 @@ const Price = ({language}) => {
     const currentTime = Math.floor(Date.now() / 1000);
     setEndTime(endTime && currentTime > endTime);
   }, [getEndTime.data]);
-  
+  console.log(endTime);
   return (
     <section id="price" className="ico-section">
       <div data-aos="fade-up" className="w-layout-blockcontainer container w-container">
@@ -204,11 +204,7 @@ const Price = ({language}) => {
           )}
           <br />
           <div className="coins-wrapper">
-            <img src="images/ethereum.png" loading="lazy" alt="price" className="coin hide-mobile" />
-            <img src="images/bnb.png" loading="lazy" alt="price" className="coin" />
             <ConnectWalletButton />
-            <img src="images/money.png" loading="lazy" alt="price" className="coin" />
-            <img src="images/coin.png" loading="lazy" alt="price" className="coin hide-mobile" />
           </div>
           <a
             href="https://baby-sinclair.gitbook.io/docs/how-to-buy"
