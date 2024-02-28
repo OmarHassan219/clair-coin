@@ -23,7 +23,7 @@ const Layout = () => {
       path: "/cookie-policy",
       element: <Cookies setLanguage={setLanguage} language={language} />,
     },
-  ], {basename:'/'});
+  ]);
   
   return (
     <div className="page-wrapper">
