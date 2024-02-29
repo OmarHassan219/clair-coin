@@ -1936,9 +1936,12 @@ html input[disabled] {
     grid-template-rows: auto;
     margin-top: 0;
   }
+  .shiba-para{
+    margin-top: 250px;
+  }
 
   .socials-para {
-    margin-top: 17px;
+    margin-top: -30px;
     font-size: 1.2rem;
   }
 
@@ -2698,5 +2701,13 @@ input[type="number"] {
   }
   100% {
     box-shadow: 0 0 0 0 rgba(70, 240, 250, 0);
+  }
+}
+
+/* ====== */
+
+@media screen and (max-width:480px){
+  .paymentInput{
+    font-size: 1rem;
   }
 }

@@ -63,6 +63,7 @@ const Shibainu = ({language}) => {
               alt='logos'
               className="inu-logo"
               ref={logo}
+              style={{opacity: turn ? '1' : '0', transition: "all 0.6s"}}
             />
           </div>
           <p

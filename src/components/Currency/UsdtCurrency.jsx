@@ -195,7 +195,7 @@ export default function UsdtCurrency() {
     <div>
       <div className="inputContainer">
         <div>
-          <label htmlFor="paymentInput">YOU PAY IN USDT:</label>
+          <label htmlFor="paymentInput">USDT YOU PAY:</label>
           <div className="inputBox">
             <input
               type="number"

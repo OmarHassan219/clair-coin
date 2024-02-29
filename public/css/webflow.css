@@ -1818,3 +1818,11 @@ textarea.w-select {
 .wf-layout-layout {
   display: grid;
 }
+
+/* ====== */
+
+@media screen and (max-width: 480px){
+  .inputContainer label{
+    font-size: 1rem;
+  }
+}
