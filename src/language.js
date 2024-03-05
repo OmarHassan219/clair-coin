@@ -218,6 +218,7 @@ pl:'Polish',
 }
 export const flag = {
 en:'gb',
+'en-US':'gb',
 es:'es',
 hi:'in',
 de:'de',

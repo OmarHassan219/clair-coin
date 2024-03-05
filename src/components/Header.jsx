@@ -93,7 +93,7 @@ const dir = document.body.dir;
                         <div className="nav-link">
                        {dir === 'ltr' && <span style={{marginRight:"5px"}} className={`fi fi-${i18n.language ? flag[i18n.language] : 'en'} `}></span>}
 
-                          {i18n.language ? abbrev[i18n.language] : 'English'}
+                          {i18n.language ? i18n.language === "en-US" ? 'English' : abbrev[i18n.language] : 'English'}
                        {dir === 'rtl' && <span style={{marginRight:"5px"}} className={`fi fi-${i18n.language ? flag[i18n.language] : 'en'} `}></span>}
                           
                           </div>
@@ -189,8 +189,11 @@ const dir = document.body.dir;
                           onClick={() => setOpen(!open)}
                         >
                        <div className="nav-link">
-                        <span style={{marginRight:"5px"}} className={`fi fi-${i18n.language ? i18n.language === 'en' ? 'gb' : i18n.language : 'en'} `}></span>
-                          {i18n.language ? abbrev[i18n.language] : 'English'}</div>
+                       {dir === 'ltr' && <span style={{marginRight:"5px"}} className={`fi fi-${i18n.language ? flag[i18n.language] : 'en'} `}></span>}
+
+{i18n.language ? i18n.language === "en-US" ? 'English' : abbrev[i18n.language] : 'English'}
+{dir === 'rtl' && <span style={{marginRight:"5px"}} className={`fi fi-${i18n.language ? flag[i18n.language] : 'en'} `}></span>}
+                          </div>
                           <svg
                             style={{ color: "rgb(104,122,122)" , marginLeft:"0.5px"}}
                             className="ikonik-p7oqm"
@@ -228,8 +231,9 @@ const dir = document.body.dir;
                                 key={idx}
                                 style={{ whiteSpace: "nowrap", cursor: "pointer" }}
                               >
-                        <span style={{marginRight:"5px"}} className={`fi fi-${item.flag} `}></span>
-                                {item.text}
+                         {dir === 'ltr' && <span style={{marginRight:"5px"}} className={`fi fi-${item.flag} `}></span>}
+                              {item.text}
+                        {dir === 'rtl' && <span style={{marginRight:"5px"}} className={`fi fi-${item.flag} `}></span>}
                               </span>
                             ))}
                           </div>
