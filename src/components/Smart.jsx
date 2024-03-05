@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import { lan } from '../language';
+import { useTranslation } from "react-i18next";
 
 const Smart = ({language}) => {
   const [copyStatus, setCopyStatus] = useState(false);
+  const { t, i18n } = useTranslation();
 
   const handleCopyClick = () => {
     const textToCopy = '0xFD1929755F73f974648daD00ab491a7C44a00eeD';
@@ -34,14 +36,14 @@ const Smart = ({language}) => {
         <div data-aos="fade-up" className="w-layout-blockcontainer container w-container">
           <div className="smart-contract-component">
             <div className="vertical-flex">
-              <h2 className="sc-h2">{lan[language].smartTitle}</h2>
+              <h2 className="sc-h2">{t('smartTitle')}</h2>
               <div className="sc-address">0xFD1929755F73f974648daD00ab491a7C44a00eeD</div>
               <button onClick={handleCopyClick} id="copy" className="button-th smart-contract w-button">
-                {copyStatus ? <span id="copy-text">Copied</span> 
-                 : <span id="copy-text">Copy</span>}
+                {copyStatus ? <span id="copy-text">{t('Copied')}</span> 
+                 : <span id="copy-text">{t('Copy')}</span>}
               </button>
             </div>
-            <p className="sc-para">{lan[language].smartText[0]} <strong>$CLAIR</strong> {lan[language].smartText[1]}<br /><strong>{lan[language].smartText[2]}</strong></p>
+            <p className="sc-para">{t('smartText.0')} <strong>$CLAIR</strong> {t('smartText.1')}<br /><strong>{t('smartText.2')}</strong></p>
           </div>
         </div>
       </section>

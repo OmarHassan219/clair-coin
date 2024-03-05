@@ -1,14 +1,16 @@
 import React from 'react'
 import { lan } from '../language'
+import { useTranslation } from 'react-i18next';
 
 const Tokenmonic = ({language}) => {
+  const { t, i18n } = useTranslation();
   return (
     <section id="tokenomics" className="tokenomics-section">
       <div className="w-layout-blockcontainer container w-container">
         <div className="tokenomics-component">
-          <h2>{lan[language].token.title}</h2>
+          <h2>{t('token.title')}</h2>
           <p className="tokenomics-paragraph">
-          {lan[language].token.text}
+          {t('token.text')}
           </p>
           <img src="images/3D-Pie-chart.gif" alt="3d" className="tokenomics-image hide" />
           <div className="tokenomics-image-wrapper">

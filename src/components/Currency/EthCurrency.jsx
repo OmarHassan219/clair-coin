@@ -20,10 +20,12 @@ import {
   contractAddr,
   chainId,
 } from "../../config";
+import { useTranslation } from "react-i18next";
 
 export default function EthCurrency() {
   const [ethAmount, setEthAmount] = useState("");
   const [ethErrorMessage, setEthErrorMessage] = useState("");
+  const { t, i18n } = useTranslation();
 
   const { address } = useAccount();
 
@@ -102,9 +104,9 @@ export default function EthCurrency() {
       const parsedAmount = Number(inputValue);
 
       if (isNaN(parsedAmount) || parsedAmount <= 0) {
-        setEthErrorMessage("Amount must be greater than zero");
+        setEthErrorMessage(`${t('Amount must be greater than zero')}`);
       } else if (balanceEth.data?.formatted < parsedAmount) {
-        setEthErrorMessage("Insufficient balance.");
+        setEthErrorMessage(`${t("Insufficient balance")}.`);
       } else {
         setEthErrorMessage("");
       }
@@ -124,7 +126,7 @@ export default function EthCurrency() {
     <div>
       <div className="inputContainer">
         <div>
-          <label htmlFor="paymentInput">ETH YOU PAY:</label>
+          <label htmlFor="paymentInput">ETH {t('YOU PAY')}:</label>
           <div className="inputBox">
             <input
               type="number"
@@ -135,7 +137,7 @@ export default function EthCurrency() {
               step="any"
             />
             <img
-              className="inputIcon"
+                           className={`inputIcon ${document.body.dir === 'rtl' ? 'rtl' : ''}`}
               src="/images/eth.png"
               width={36}
               height={36}
@@ -145,11 +147,11 @@ export default function EthCurrency() {
         </div>
 
         <div>
-          <label htmlFor="tokenInput">$CLAIR YOU RECEIVE:</label>
+          <label htmlFor="tokenInput">$CLAIR {t('YOU RECEIVE')}:</label>
           <div className="inputBox">
             <input type="number" placeholder={result} readOnly />
             <img
-              className="inputIcon"
+              className={`inputIcon ${document.body.dir === 'rtl' ? 'rtl' : ''}`}
               src="/images/clair.png"
               width={36}
               height={36}
@@ -168,7 +170,7 @@ export default function EthCurrency() {
         disabled={!write || isLoading}
         onClick={() => write()}
       >
-        {isLoading ? "Buying..." : "Buy Now"}
+        {isLoading ? t(`Buying`) : t(`Buy Now`)}
       </button>
       )}
     </div>

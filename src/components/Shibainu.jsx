@@ -1,9 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
 import { lan } from "../language";
+import { useTranslation } from "react-i18next";
 
 const Shibainu = ({language}) => {
   const logo = useRef(null);
   const [turn, setTurn] = useState(false);
+  const { t, i18n } = useTranslation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -70,15 +72,15 @@ const Shibainu = ({language}) => {
             id="w-node-_7acadf27-4c72-7eeb-3ed3-0c8b1fb145fd-85e878c5"
             className="shiba-para"
           >
-            {lan[language].shibainuText1}
+            {t('shibainuText1')}
           </p>
         </div>
         <div className="socials-component">
           <p className="socials-para">
-            {lan[language].shibainuTitle}
+            {t('shibainuTitle')}
           </p>
           <p className="socials-para2">
-            “{lan[language].shibainu[0]} <strong>'{lan[language].shibainu[1]}'</strong> {lan[language].shibainu[2]} <strong>{lan[language].shibainu[3]}</strong>"
+            “{t(lan[language].shibainu[0])} <strong>'{t(lan[language].shibainu[1])}'</strong> {t(lan[language].shibainu[2])} <strong>{t(lan[language].shibainu[3])}</strong>"
           </p>
           <div className="socials-wrapper">
             <a href="#" className="social-link w-inline-block">

@@ -146,7 +146,7 @@ a {
 }
 
 .w-locales-items span {
-  display: block;
+  display: inline-block;
 }
 
 .page-wrapper {
@@ -1224,8 +1224,9 @@ html input[disabled] {
   position: absolute;
   top: auto;
   bottom: 0%;
-  left: -110%;
-  right: 0%;
+  left: 50%;
+  transform: translateX(-50%);
+  /* right: 0%; */
 }
 
 .line-wrapper {
@@ -2519,6 +2520,7 @@ html input[disabled] {
   width: 24px;
   height: 24px;
   margin-right: 6px;
+  margin-left: 6px;
 }
 
 .connectwallet {
@@ -2599,6 +2601,8 @@ html input[disabled] {
   width: 24px;
   height: 24px;
   margin-right: 6px;
+  margin-left: 6px;
+
 }
 
 .custom-button.active {
@@ -2617,6 +2621,8 @@ html input[disabled] {
     width: 20px;
     height: 20px;
     margin-right: 4px;
+  margin-left: 4px;
+
   }
 }
 
@@ -2696,6 +2702,11 @@ input[type="number"] {
   top: 50%;
   right: 40px;
   transform: translateY(-50%);
+}
+.inputIcon.rtl{
+  right: 200px;
+
+
 }
 
 @keyframes scroll {

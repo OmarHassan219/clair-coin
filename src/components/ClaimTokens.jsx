@@ -12,9 +12,11 @@ import {
 import { parseUnits, formatEther, formatUnits } from "viem";
 import presaleAbi from "../abi/presale.json";
 import { tokenAdd, usdcAdd, usdtAdd, contractAddr, chainId } from "../config";
+import { useTranslation } from "react-i18next";
 
 const ClaimToken = () => {
   const { address } = useAccount();
+  const { t, i18n } = useTranslation();
 
   const getClaimableTokens = useContractRead({
     address: contractAddr,
@@ -46,13 +48,15 @@ const ClaimToken = () => {
     if (isSuccess) {
       toast.success(
         <div className="text-center py-2">
-          Success! Token has been claimed.
+          {t('Success! Token has been claimed.')}
           <div>
             <Link
               style={{ color: "#fff" }}
               href={`https://sepolia.etherscan.io/tx/${data?.hash}`}
             >
-              View On Etherscan
+              
+          {t('View On Etherscan')}
+
             </Link>
           </div>
         </div>
@@ -67,7 +71,7 @@ const ClaimToken = () => {
   useEffect(() => {
     if (isError) {
       toast.error(
-        <div className="text-center py-2">Error! Something Went Wrong</div>
+        <div className="text-center py-2">{t('Error! Something Went Wrong')}</div>
       );
       const timeout = setTimeout(() => {
         toast.dismiss();
@@ -79,26 +83,26 @@ const ClaimToken = () => {
   return (
     <div className="text-center">
       {balance == 0 ? (
-        <><p>Already Claimed Token. Check your wallet. Thanks.</p><button
+        <><p>{t('Already Claimed Token. Check your wallet. Thanks.')}</p><button
           type="button"
           className="button w-button"
           disabled
         >
-          Claimed
+          {t('Claimed')}
         </button></>
       ) : (
         <>
       {address && (
         <>
           <br />
-          <p>Claimable Tokens: {balance} $CLAIR</p>
+          <p>{t('Claimable Tokens:')} {balance} $CLAIR</p>
             <button
               type="button"
               className="button w-button"
               disabled={!write || isLoading} 
               onClick={() => write()}
             >
-              {isLoading ? "Claiming..." : "Claim Now"}
+              {isLoading ? t('Claiming...') : t('Claim Now')}
             </button>
         </>
       )}

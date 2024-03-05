@@ -1,40 +1,25 @@
 import React, { useEffect, useState } from "react";
 import { Link, animateScroll as scroll } from 'react-scroll';
-import {lan} from "../language"
+import {abbrev, flag, lan, lans} from "../language"
+import { useTranslation} from 'react-i18next';
 
-const lans = [
-  {
-    name: "English",
-    text: "English (United States)",
-    id: 'en'
-  },
-  {
-    name: "Spanish",
-    text: "Spanish",
-    id: 'es'
-  },
-  {
-    name: "Hindu",
-    text: "Hindu",
-    id: 'hi'
-  },
-]
+
 
 const Header = ({setLanguage, language}) => {
+  const { t, i18n } = useTranslation();
   const [open, setOpen] = useState(false);
-  const [t, setT] = useState(false);
+  const [tt, setT] = useState(false);
   const [selectL, setSelectL] = useState('English (United States)')
   const path = window.location.pathname
-
+const dir = document.body.dir;
   const handleSelectLanguage = (id,name) => {
-    setSelectL(name);
-    setLanguage(id)
-    localStorage.setItem('selectedLanguage', id);
+    setSelectL({name , id });
+      i18n.changeLanguage(id);
     setOpen(false);
   };
 
   const handleMenu = () => {
-    setT(!t);
+    setT(!tt);
     setOpen(false)
   }
 
@@ -50,7 +35,7 @@ const Header = ({setLanguage, language}) => {
     <div className="navbar-logo-left">
       <Link to="ico" spy={true} smooth={true} duration={500} className="nav-banner w-inline-block">
         <div className="text-block">
-          {lan[language].bonus}
+        {t('bonus')}
         </div>
       </Link>
       <div
@@ -82,9 +67,9 @@ const Header = ({setLanguage, language}) => {
                 <li className="menulist">
                   {lan[language].menu.map((item,idx) => (
                     path === '/' ? <Link to={item.href} spy={true} smooth={true} duration={500} className="nav-link" style={{cursor: 'pointer'}} key={idx}>
-                      {item.name}
+                      {t(item.name)}
                     </Link> : <a href={`/#${item.href}`} key={idx} className="nav-link">
-                    {item.name}
+                    {t(item.name)}
                     </a>
                   ))}
                   <a
@@ -92,7 +77,7 @@ const Header = ({setLanguage, language}) => {
                     target="_blank"
                     className="nav-link"
                   >
-                    {lan[language].whitePaper}
+                    {t('whitePaper')}
                   </a>
                   <div className="locales-wrapper w-locales-list">
                     <div
@@ -105,7 +90,13 @@ const Header = ({setLanguage, language}) => {
                         className="lan-toggle w-dropdown-toggle"
                         onClick={() => setOpen(!open)}
                       >
-                        <div className="nav-link">{selectL}</div>
+                        <div className="nav-link">
+                       {dir === 'ltr' && <span style={{marginRight:"5px"}} className={`fi fi-${i18n.language ? flag[i18n.language] : 'en'} `}></span>}
+
+                          {i18n.language ? abbrev[i18n.language] : 'English'}
+                       {dir === 'rtl' && <span style={{marginRight:"5px"}} className={`fi fi-${i18n.language ? flag[i18n.language] : 'en'} `}></span>}
+                          
+                          </div>
                         <svg
                           style={{ color: "rgb(104,122,122)" }}
                           className="ikonik-p7oqm"
@@ -141,7 +132,9 @@ const Header = ({setLanguage, language}) => {
                               key={idx}
                               style={{ whiteSpace: "nowrap", cursor: "pointer" }}
                             >
+                        {dir === 'ltr' && <span style={{marginRight:"5px"}} className={`fi fi-${item.flag} `}></span>}
                               {item.text}
+                        {dir === 'rtl' && <span style={{marginRight:"5px"}} className={`fi fi-${item.flag} `}></span>}
                             </span>
                           ))}
                         </div>
@@ -157,13 +150,13 @@ const Header = ({setLanguage, language}) => {
             <div
               className="w-nav-overlay"
               id="w-nav-overlay-0"
-              style={{ height: "7295.27px", display: t ? 'block' : 'none' }}
+              style={{ height: "7295.27px", display: tt ? 'block' : 'none' }}
             >
               <nav
                 role="navigation"
                 className="nav-menu-wrapper w-nav-menu"
                 style={{
-                  transform: `${t ?  'translateY(0px)' : 'translateY(-100%)'} translateX(0px)`,
+                  transform: `${tt ?  'translateY(0px)' : 'translateY(-100%)'} translateX(0px)`,
                   transition: "transform 400ms ease 0s"
                 }}
                 data-nav-menu-open
@@ -172,9 +165,9 @@ const Header = ({setLanguage, language}) => {
                   <li style={{display: 'flex', flexDirection: "column"}}>
                     {lan[language].menu.map((item,idx) => (
                       path === '/' ? <Link to={item.href} spy={true} smooth={true} duration={500} className="nav-link" style={{cursor: 'pointer'}} key={idx}>
-                        {item.name}
+                                              {t(item.name)}
                       </Link> : <a href={`/#${item.href}`} key={idx} className="nav-link">
-                      {item.name}
+                      {t(item.name)}
                       </a>
                     ))}
                     <a
@@ -182,7 +175,7 @@ const Header = ({setLanguage, language}) => {
                       target="_blank"
                       className="nav-link"
                     >
-                      {lan[language].whitePaper}
+                      {t(lan[language].whitePaper)}
                     </a>
                     <div className="locales-wrapper w-locales-list">
                       <div
@@ -195,9 +188,11 @@ const Header = ({setLanguage, language}) => {
                           className="lan-toggle w-dropdown-toggle"
                           onClick={() => setOpen(!open)}
                         >
-                          <div className="nav-link">{selectL}</div>
+                       <div className="nav-link">
+                        <span style={{marginRight:"5px"}} className={`fi fi-${i18n.language ? i18n.language === 'en' ? 'gb' : i18n.language : 'en'} `}></span>
+                          {i18n.language ? abbrev[i18n.language] : 'English'}</div>
                           <svg
-                            style={{ color: "rgb(104,122,122)" }}
+                            style={{ color: "rgb(104,122,122)" , marginLeft:"0.5px"}}
                             className="ikonik-p7oqm"
                             xmlns="http://www.w3.org/2000/svg"
                             width={18}
@@ -233,6 +228,7 @@ const Header = ({setLanguage, language}) => {
                                 key={idx}
                                 style={{ whiteSpace: "nowrap", cursor: "pointer" }}
                               >
+                        <span style={{marginRight:"5px"}} className={`fi fi-${item.flag} `}></span>
                                 {item.text}
                               </span>
                             ))}

@@ -1,11 +1,13 @@
 import React from "react";
 import { lan } from "../language";
+import { useTranslation } from "react-i18next";
 
 const Seen = ({language}) => {
+  const { t, i18n } = useTranslation();
   return (
     <div>
-      <h2 className="container as-seen-in">{lan[language].seen}</h2>
-      <div className="marquee">
+      <h2 className="container as-seen-in">{t(lan[language].seen)}</h2>
+      <div dir="ltr" className="marquee">
         <div className="marquee-content scroll">
           <img
             src="images/Yahoo_Finance_logo_2021.png"

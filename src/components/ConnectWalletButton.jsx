@@ -1,7 +1,9 @@
 import React from "react";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
+import { useTranslation } from "react-i18next";
 
 const ConnectWalletButton = () => {
+  const { t, i18n } = useTranslation();
   
   return (
     <ConnectButton.Custom>
@@ -43,7 +45,7 @@ const ConnectWalletButton = () => {
                   type="button"
                   className="button w-button"
                 >
-                  Connect Wallet
+                  {t('Connect Wallet')}
                 </button>
               );
             }

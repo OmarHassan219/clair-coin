@@ -20,11 +20,13 @@ import {
   contractAddr,
   chainId,
 } from "../../config";
+import { useTranslation } from "react-i18next";
 
 export default function UsdtCurrency() {
   const [usdtAmount, setUsdtAmount] = useState("");
   const [usdtErrorMessage, setUsdtErrorMessage] = useState("");
   const [allowance, setAllowance] = useState(new BigNumber(0));
+  const { t, i18n } = useTranslation();
 
   const { address } = useAccount();
 
@@ -195,7 +197,7 @@ export default function UsdtCurrency() {
     <div>
       <div className="inputContainer">
         <div>
-          <label htmlFor="paymentInput">USDT YOU PAY:</label>
+          <label htmlFor="paymentInput">USDT {t('YOU PAY')}:</label>
           <div className="inputBox">
             <input
               type="number"
@@ -206,7 +208,7 @@ export default function UsdtCurrency() {
               step="any"
             />
             <img
-              className="inputIcon"
+                            className={`inputIcon ${document.body.dir === 'rtl' ? 'rtl' : ''}`}
               src="/images/usdt.svg"
               width={36}
               height={36}
@@ -216,11 +218,11 @@ export default function UsdtCurrency() {
         </div>
 
         <div>
-          <label htmlFor="tokenInput">$CLAIR YOU RECEIVE:</label>
+          <label htmlFor="tokenInput">$CLAIR {t('YOU RECEIVE')}:</label>
           <div className="inputBox">
             <input type="number" placeholder={result} readOnly />
             <img
-              className="inputIcon"
+                            className={`inputIcon ${document.body.dir === 'rtl' ? 'rtl' : ''}`}
               src="/images/clair.png"
               width={36}
               height={36}
@@ -248,7 +250,7 @@ export default function UsdtCurrency() {
               disabled={!write || isLoading}
               onClick={() => write()}
             >
-              {isLoading ? "Buying..." : "Buy Now"}
+           {isLoading ? t(`Buying`) : t(`Buy Now`)}
             </button>
           )}
         </>

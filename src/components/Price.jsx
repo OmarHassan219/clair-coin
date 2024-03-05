@@ -19,10 +19,11 @@ import { parseUnits, formatEther, formatUnits } from "viem";
 import presaleAbi from "../abi/presale.json";
 import { tokenAdd, usdcAdd, usdtAdd, contractAddr, chainId } from "../config";
 import { lan } from "../language";
+import { useTranslation } from "react-i18next";
 
 const Price = ({language}) => {
   const [endTime, setEndTime] = useState("");
-
+  const { t, i18n } = useTranslation();
   const { address } = useAccount();
 
   const getEndTime = useContractRead({
@@ -108,10 +109,10 @@ const Price = ({language}) => {
       <div data-aos="fade-up" className="w-layout-blockcontainer container w-container">
         <div className="ico-component">
           <h2 className="ico-h2">
-            {lan[language].price.title}
+            {t(lan[language].price.title)}
           </h2>
           <CountdownTimer />
-          <div className="price">USDT Raised: ${Number(usdTotal).toLocaleString()}</div>
+          <div className="price">USDT {t('Raised')} ${Number(usdTotal).toLocaleString()}</div>
           <br />
           <div className="progress-bar-container">
             <div
@@ -190,8 +191,8 @@ const Price = ({language}) => {
               <div>
                 {address && (
                   <>
-                    <p>Your Purchase $CLAIR: {userAmountPurchased}</p>
-                    <p>Your Bonus $CLAIR: {userAmountBonus}</p>
+                    <p>{t('Your Purchase')} $CLAIR: {userAmountPurchased}</p>
+                    <p>{t('Your Bonus')} $CLAIR: {userAmountBonus}</p>
                   </>
                 )}
               </div>
@@ -210,7 +211,7 @@ const Price = ({language}) => {
             href="https://baby-sinclair.gitbook.io/docs/how-to-buy"
             className="button-sec small w-button"
           >
-            {lan[language].price.how}
+            {t(lan[language].price.how)}
           </a>
         </div>
       </div>

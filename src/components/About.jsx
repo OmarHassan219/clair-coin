@@ -1,7 +1,9 @@
 import React from "react";
 import { lan } from "../language";
+import { useTranslation } from "react-i18next";
 
 const About = ({language}) => {
+  const { t, i18n } = useTranslation();
   return (
     <section id="about" className="story-section">
       <div className="w-layout-blockcontainer container w-container">
@@ -12,16 +14,19 @@ const About = ({language}) => {
           >
             <h2>$CLAIR</h2>
             <p>
-              {lan[language].about[0]}
+              {t(lan[language].about[0])}
               <br />
               <br />
-              {lan[language].about[1]}
+              {t(lan[language].about[1])}
+
               <br />
               <br />
-              {lan[language].about[2]}
+              {t(lan[language].about[2])}
+
               <br />
               <br />
-              {lan[language].about[3]}
+              {t(lan[language].about[3])}
+
             </p>
           </div>
           <div

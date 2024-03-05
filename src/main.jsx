@@ -19,6 +19,7 @@ import {
 } from "wagmi/chains";
 import { jsonRpcProvider } from "wagmi/providers/jsonRpc";
 import Layout from "./Layout";
+import './i18n';
 
 const { chains, publicClient } = configureChains(
   [sepolia],

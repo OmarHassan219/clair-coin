@@ -1,7 +1,9 @@
 import React from "react";
 import { lan } from "../language";
+import { useTranslation } from "react-i18next";
 
 const Security = ({language}) => {
+  const { t, i18n } = useTranslation();
   return (
     <section id="security-section" className="security-section">
       <div className="w-layout-blockcontainer container w-container">
@@ -14,7 +16,7 @@ const Security = ({language}) => {
             className="security_content"
           >
             <h2 className="security-heading">
-              {lan[language].securityTitle}
+              {t('securityTitle')}
             </h2>
             <div className="security-icons-container">
               <a
@@ -24,9 +26,10 @@ const Security = ({language}) => {
               >
                 <img src="images/audit-.png" loading="lazy" alt='secure' />
                 <div className="security-text">
-                  Fully
+                  {t('Fully')}
                   <br />
-                  Audited
+                  {t('Audited')}
+                  
                 </div>
               </a>
               <a
@@ -38,14 +41,14 @@ const Security = ({language}) => {
                 <div className="security-text">
                   100%
                   <br />
-                  Secure.
+                  {t('Secure')}.
                 </div>
               </a>
             </div>
             <p className="security-para">
-              {lan[language].securityRug}{" "}
+              {t('securityRug')}
               <span className="security-highlight">
-                {lan[language].securityValue}
+                {t('securityValue')}
               </span>
             </p>
           </div>

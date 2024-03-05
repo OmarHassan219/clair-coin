@@ -1128,8 +1128,11 @@ textarea.w-select {
 .w-dropdown-list {
   position: absolute;
   background: #dddddd;
+  left: 50%;
+  transform: translateX(-50%);
   display: none;
   min-width: 100%;
+  width: fit-content;
 }
 .w-dropdown-list.w--open {
   display: block;

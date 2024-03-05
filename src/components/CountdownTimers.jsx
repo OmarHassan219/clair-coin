@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useContractRead } from "wagmi";
 import presaleAbi from "../abi/presale.json";
 import { tokenAdd, usdcAdd, usdtAdd, contractAddr, chainId } from "../config";
+import { useTranslation } from "react-i18next";
 
 const CountdownTimer = () => {
   const getTime = useContractRead({
@@ -11,7 +12,7 @@ const CountdownTimer = () => {
     watch: true,
     chainId: chainId,
   });
-
+  const { t, i18n } = useTranslation();
   const [timeRemaining, setTimeRemaining] = useState(null);
 
   function getTimeRemaining(targetDate) {
@@ -46,10 +47,10 @@ const CountdownTimer = () => {
 
   return (
     <div className="clock-wrapper">
-      <div className="time-label">DAYS</div>
-      <div className="time-label">HRS</div>
-      <div className="time-label">MIN</div>
-      <div className="time-label">SEC</div>
+      <div className="time-label">{t('D')}</div>
+      <div className="time-label">{t('H')}</div>
+      <div className="time-label">{t('M')}</div>
+      <div className="time-label">{t('S')}</div>
       <div className="time-number">{timeRemaining.days}</div>
       <div className="time-number">{timeRemaining.hours}</div>
       <div className="time-number">{timeRemaining.minutes}</div>

@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import { lan } from "../language";
 import { Link } from "react-scroll";
+import { useTranslation } from "react-i18next";
 
 const Hero = ({language}) => {
   const [popUpDisplay, setPopUpDisplay] = useState({
@@ -33,6 +34,8 @@ const Hero = ({language}) => {
       setPopUpDisplay((prevDisplay) => ({ ...prevDisplay, [popUpNumber]: false }));
     });
   };
+  const { t, i18n } = useTranslation();
+
   return (
     <section id="hero-section" className="hero-section">
       <div id="avatar-pop-up-1" className="pop-up-wrapper" style={{display: popUpDisplay[1] ? 'block' : 'none'}}>
@@ -156,7 +159,7 @@ const Hero = ({language}) => {
             className="hero-left"
           >
             <h1 className="hero-heading">
-              {lan[language].heroTitle}
+              {t(lan[language].heroTitle)}
             </h1>
             <div className="hero-right hide-desktop">
               <img
@@ -170,7 +173,7 @@ const Hero = ({language}) => {
                 id="w-node-_2fe4251d-357d-79ec-6263-fff8c97ac650-85e878c5"
                 className="click-on-avatars"
               >
-                {lan[language].heroInfo}
+                {t(lan[language].heroInfo)}
               </div>
               <div
                 id="w-node-_2fe4251d-357d-79ec-6263-fff8c97ac652-85e878c5"
@@ -211,8 +214,8 @@ const Hero = ({language}) => {
               </div>
             </div>
             <p>
-              {lan[language].heroText[0]}{" "}
-              <strong>{lan[language].heroText[1]}</strong> {lan[language].heroText[2]}
+              {t(lan[language].heroText[0])}
+              <strong>{t(lan[language].heroText[1])}</strong> {t(lan[language].heroText[2])}
             </p>
             <div className="spacer-62" />
             <div className="btn-wrapper">
@@ -256,7 +259,7 @@ const Hero = ({language}) => {
               </svg>
               <div>
                 <Link to="price" spy={true} smooth={true} offset={-100} duration={500} style={{cursor: 'pointer'}} className="home-cta w-button">
-                {lan[language].heroBtn} $CLAIR
+                {t(lan[language].heroBtn)} $CLAIR
                 </Link>
               </div>
             </div>
@@ -276,7 +279,7 @@ const Hero = ({language}) => {
               id="w-node-_599907d2-16c7-d20e-78b9-ec6758827574-85e878c5"
               className="click-on-avatars"
             >
-              {lan[language].heroInfo}
+                              {t(lan[language].heroInfo)}
             </div>
             <div
               id="w-node-_65164ae0-7aa5-6316-8c40-f2db633b4aa3-85e878c5"

@@ -1,8 +1,11 @@
 import React from "react";
 import { lan } from "../language";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const Footer = ({language}) => {
+  const { t, i18n } = useTranslation();
+
   return (
     <footer className="footer">
       <div className="w-layout-blockcontainer container w-container">
@@ -25,13 +28,13 @@ const Footer = ({language}) => {
           <div className="footer-links">
             {lan[language].footerLinks.map((item,idx) => (
               <a href={item.href} key={idx} className="footer-link">
-                {item.name}
+                {t(item.name)}
               </a>
             ))}
           </div>
         </div>
         <div className="copy-right">
-          {lan[language].footerInfo}
+          {t('footerInfo')}
         </div>
       </div>
     </footer>
