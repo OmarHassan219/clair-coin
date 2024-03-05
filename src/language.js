@@ -236,71 +236,10 @@ pl:'pl',
 
 export const lans = [
   {
-    name: "English",
-    text: "English",
-    id: 'en',
-    flag:'gb'
-  },
-  {
-    name: "Spanish",
-    text: "Spanish",
-    id: 'es',
-    flag:'es'
-
-  },
-  {
-    name: "Hindu",
-    text: "Hindu",
-    id: 'hi',
-    flag:'in'
-  },
-  {
-    name: "Deutsch",
-    text: "Deutsch",
-    id: 'de',
-    flag:'de'
-  },
-  {
-    name: "Japanese",
-    text: "Japanese",
-    id: 'ja',
-    flag:'jp'
-  },
-  {
     name: "Arabic",
     text: "Arabic",
     id: 'ar-SA',
     flag:'sa'
-  },
-  {
-    name: "Italy",
-    text: "Italy",
-    id: 'it',
-    flag:'it'
-  },
-  {
-    name: "Russian",
-    text: "Russian",
-    id: 'ru',
-    flag:'ru'
-  },
-  {
-    name: "French",
-    text: "French",
-    id: 'fr',
-    flag:'fr'
-  },
-  {
-    name: "Turkish",
-    text: "Turkish",
-    id: 'tr',
-    flag:'tr'
-  },
-  {
-    name: "Korean",
-    text: "Korean",
-    id: 'ko',
-    flag:'kr'
   },
   {
     name: "Chinese",
@@ -309,10 +248,46 @@ export const lans = [
     flag:'cn'
   },
   {
-    name: "Portugesse",
-    text: "Portugesse",
-    id: 'pt',
-    flag:'pt'
+    name: "Deutsch",
+    text: "Deutsch",
+    id: 'de',
+    flag:'de'
+  },
+  {
+    name: "English",
+    text: "English",
+    id: 'en',
+    flag:'gb'
+  },
+  {
+    name: "French",
+    text: "French",
+    id: 'fr',
+    flag:'fr'
+  },
+  {
+    name: "Hindu",
+    text: "Hindu",
+    id: 'hi',
+    flag:'in'
+  },
+  {
+    name: "Italian",
+    text: "Italian",
+    id: 'it',
+    flag:'it'
+  },
+  {
+    name: "Japanese",
+    text: "Japanese",
+    id: 'ja',
+    flag:'jp'
+  },
+  {
+    name: "Korean",
+    text: "Korean",
+    id: 'ko',
+    flag:'kr'
   },
   {
     name: "Polish",
@@ -320,4 +295,28 @@ export const lans = [
     id: 'pl',
     flag:'pl'
   },
-]
+  {
+    name: "Portuguese",
+    text: "Portuguese",
+    id: 'pt',
+    flag:'pt'
+  },
+  {
+    name: "Russian",
+    text: "Russian",
+    id: 'ru',
+    flag:'ru'
+  },
+  {
+    name: "Spanish",
+    text: "Spanish",
+    id: 'es',
+    flag:'es'
+  },
+  {
+    name: "Turkish",
+    text: "Turkish",
+    id: 'tr',
+    flag:'tr'
+  }
+];
