@@ -93,7 +93,7 @@ const dir = document.body.dir;
                         <div className="nav-link">
                        {dir === 'ltr' && <span style={{marginRight:"5px"}} className={`fi fi-${i18n.language ? flag[i18n.language] : 'en'} `}></span>}
 
-                          {i18n.language ? i18n.language === "en-US" ? 'English' : abbrev[i18n.language] : 'English'}
+                          {i18n.language ? i18n.language.includes("en") ? 'English' : abbrev[i18n.language] : 'English'}
                        {dir === 'rtl' && <span style={{marginRight:"5px"}} className={`fi fi-${i18n.language ? flag[i18n.language] : 'en'} `}></span>}
                           
                           </div>
@@ -191,7 +191,7 @@ const dir = document.body.dir;
                        <div className="nav-link">
                        {dir === 'ltr' && <span style={{marginRight:"5px"}} className={`fi fi-${i18n.language ? flag[i18n.language] : 'en'} `}></span>}
 
-{i18n.language ? i18n.language === "en-US" ? 'English' : abbrev[i18n.language] : 'English'}
+                       {i18n.language ? i18n.language.includes("en") ? 'English' : abbrev[i18n.language] : 'English'}
 {dir === 'rtl' && <span style={{marginRight:"5px"}} className={`fi fi-${i18n.language ? flag[i18n.language] : 'en'} `}></span>}
                           </div>
                           <svg
