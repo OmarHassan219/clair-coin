@@ -44,8 +44,8 @@ export const lan = {
       title: "Tokenomics",
       text: "Built on the Ethereum blockchain and powered by the most advanced AI technology, Baby Sinclair has the potential to make millionaires in both early stages and long-term investment. Our strategic burn system, which will burn millions of $CLAIR quarterly, aims to increase its value significantly. Don't miss out! Get in early and secure your chance to become the next millionaire.",
     },
-    securityTitle: `Rest easy knowing that $CLAIR is:`,
-    securityValue: "INVEST WITH CONFIDENCE.",
+    securityTitle: `Rest easy knowing that $CLAIR is: `,
+    securityValue: " INVEST WITH CONFIDENCE.",
     securityRug: "ZERO ROOM FOR RUG PULLS:",
     smartTitle: "SMART CONTRACT ADDRESS",
     smartText: [
@@ -213,7 +213,7 @@ fr:'French',
 tr:'Turkish',
 ko:'Korean',
 zh:'Chinese',
-pt:'Portugesse',
+pt:'Portuguese',
 pl:'Polish',
 }
 export const flag = {

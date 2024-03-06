@@ -2,24 +2,24 @@ import React, { useEffect, useRef, useState } from "react";
 import { lan } from "../language";
 import { useTranslation } from "react-i18next";
 
-const Shibainu = ({language}) => {
+const Shibainu = ({ language }) => {
   const logo = useRef(null);
   const [turn, setTurn] = useState(false);
   const { t, i18n } = useTranslation();
 
   useEffect(() => {
     const handleScroll = () => {
-      const logoScrollY = logo.current.getBoundingClientRect().top
+      const logoScrollY = logo.current.getBoundingClientRect().top;
 
-      logoScrollY/10 < 35 ? setTurn(true) : setTurn(false)
+      logoScrollY / 10 < 35 ? setTurn(true) : setTurn(false);
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
-  }, [])
+  }, []);
 
   return (
     <section className="shibainu-section">
@@ -30,7 +30,7 @@ const Shibainu = ({language}) => {
             loading="lazy"
             id="w-node-_39d5344d-1904-46e5-4a10-4cea0cc9b347-85e878c5"
             sizes="100vw"
-            alt='logos'
+            alt="logos"
             srcSet="images/shiba-inu-p-500.png 500w, images/shiba-inu.png 506w"
             className="hide"
           />
@@ -38,54 +38,75 @@ const Shibainu = ({language}) => {
             id="w-node-_6dbd065e-9027-9616-78c6-7f39281e706e-85e878c5"
             data-w-id="6dbd065e-9027-9616-78c6-7f39281e706e"
             className="inu-container"
-            style={{marginBottom: "80px", marginLeft:"10px", paddingTop:"2em"}}
+            style={{
+              marginBottom: "80px",
+              marginLeft: "10px",
+              paddingTop: "2em",
+            }}
           >
             <img
               src="images/half-circle.png"
-              alt='logos'
+              alt="logos"
               sizes="(max-width: 479px) 100vw, (max-width: 767px) 91vw, 505.99530029296875px"
               data-w-id="1333e674-9be4-55b1-e7bc-40100738267f"
               id="w-node-_1333e674-9be4-55b1-e7bc-40100738267f-85e878c5"
               loading="lazy"
               srcSet="images/half-circle-p-500.png 500w, images/half-circle.png 506w"
-              style={{opacity: turn ? '1' : '0', transition: "all 0.6s"}}
+              style={{ opacity: turn ? "1" : "0", transition: "all 0.6s" }}
             />
             <img
               src="images/Hexa_2.gif"
               loading="lazy"
               id="w-node-_6341c3b9-7e6c-72dd-9266-d7b8edfc8105-85e878c5"
-              alt='logos'
+              alt="logos"
               className="inu-gif"
-              style={{opacity: turn ? '1' : '0'}}
+              style={{ opacity: turn ? "1" : "0" }}
             />
             <img
               src="images/shiba-logo.png"
               loading="lazy"
               id="w-node-_1457c815-f90f-d19b-f975-11de41f0a4ec-85e878c5"
-              alt='logos'
+              alt="logos"
               className="inu-logo"
               ref={logo}
-              style={{opacity: turn ? '1' : '0', transition: "all 0.6s"}}
+              style={{ opacity: turn ? "1" : "0", transition: "all 0.6s" }}
             />
           </div>
           <p
             id="w-node-_7acadf27-4c72-7eeb-3ed3-0c8b1fb145fd-85e878c5"
             className="shiba-para"
           >
-            {t('shibainuText1')}
+            {t("shibainuText1")}
           </p>
         </div>
         <div className="socials-component">
-          <p className="socials-para">
-            {t('shibainuTitle')}
-          </p>
+          <p className="socials-para">{t("shibainuTitle")}</p>
           <p className="socials-para2">
-            “{t(lan[language].shibainu[0])} <strong>'{t(lan[language].shibainu[1])}'</strong> {t(lan[language].shibainu[2])} <strong>{t(lan[language].shibainu[3])}</strong>"
+            “{t(lan[language].shibainu[0])}{" "}
+            <strong>'{t(lan[language].shibainu[1])}'</strong>{" "}
+            {t(lan[language].shibainu[2])}{" "}
+            <strong>{t(lan[language].shibainu[3])}</strong>"
           </p>
           <div className="socials-wrapper">
             <a href="#" className="social-link w-inline-block">
-            <svg xmlns="http://www.w3.org/2000/svg" width={46} height={46} viewBox="0 0 24 24" style={{fill: '#009eeb', transform: '', msfilter: ''}}><path d="m20.665 3.717-17.73 6.837c-1.21.486-1.203 1.161-.222 1.462l4.552 1.42 10.532-6.645c.498-.303.953-.14.579.192l-8.533 7.701h-.002l.002.001-.314 4.692c.46 0 .663-.211.921-.46l2.211-2.15 4.599 3.397c.848.467 1.457.227 1.668-.785l3.019-14.228c.309-1.239-.473-1.8-1.282-1.434z" /></svg>
+              <svg
+                className="ikonik-gldea x"
+                xmlns="http://www.w3.org/2000/svg"
+                width={64}
+                height={64}
+                fill="none"
+                viewBox="0 0 20 20"
+                app="ikonik"
+              >
+                <path
+                  className="path-y6nht"
+                  fill="currentColor"
+                  d="M12.186 8.672 18.743.947h-2.927l-5.005 5.9-4.44-5.9H0l7.434 9.876-6.986 8.23h2.927l5.434-6.4 4.82 6.4H20L12.186 8.672Zm-2.267 2.671L8.544 9.515 3.2 2.42h2.2l4.312 5.719 1.375 1.828 5.731 7.613h-2.2l-4.699-6.237Z"
+                  app="ikonik"
+                />
+              </svg>
             </a>
+
             <a href="#" className="social-link w-inline-block">
               <svg
                 className="ikonik-4fdvnl social-logo"
@@ -106,20 +127,13 @@ const Shibainu = ({language}) => {
             </a>
             <a href="#" className="social-link w-inline-block">
               <svg
-                className="ikonik-gldea x"
                 xmlns="http://www.w3.org/2000/svg"
-                width={64}
-                height={64}
-                fill="none"
-                viewBox="0 0 20 20"
-                app="ikonik"
+                width={46}
+                height={46}
+                viewBox="0 0 24 24"
+                style={{ fill: "#009eeb", transform: "", msfilter: "" }}
               >
-                <path
-                  className="path-y6nht"
-                  fill="currentColor"
-                  d="M12.186 8.672 18.743.947h-2.927l-5.005 5.9-4.44-5.9H0l7.434 9.876-6.986 8.23h2.927l5.434-6.4 4.82 6.4H20L12.186 8.672Zm-2.267 2.671L8.544 9.515 3.2 2.42h2.2l4.312 5.719 1.375 1.828 5.731 7.613h-2.2l-4.699-6.237Z"
-                  app="ikonik"
-                />
+                <path d="m20.665 3.717-17.73 6.837c-1.21.486-1.203 1.161-.222 1.462l4.552 1.42 10.532-6.645c.498-.303.953-.14.579.192l-8.533 7.701h-.002l.002.001-.314 4.692c.46 0 .663-.211.921-.46l2.211-2.15 4.599 3.397c.848.467 1.457.227 1.668-.785l3.019-14.228c.309-1.239-.473-1.8-1.282-1.434z" />
               </svg>
             </a>
           </div>
