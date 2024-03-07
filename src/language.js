@@ -256,10 +256,22 @@ export const lans = [
     flag:'sa'
   },
   {
+    name: "Bulgarian",
+    text: "Bulgarian",
+    id: 'bg',
+    flag:'bg'
+  },
+  {
     name: "Chinese",
     text: "Chinese",
     id: 'zh',
     flag:'cn'
+  },
+  {
+    name: "Czech",
+    text: "Czech",
+    id: 'cs',
+    flag:'cz'
   },
   {
     name: "Deutsch",
@@ -284,6 +296,18 @@ export const lans = [
     text: "Hindu",
     id: 'hi',
     flag:'in'
+  },
+  {
+    name: "Hungarian",
+    text: "Hungarian",
+    id: 'hu',
+    flag:'hu'
+  },
+  {
+    name: "Indonesian",
+    text: "Indonesian",
+    id: 'id',
+    flag:'id'
   },
   {
     name: "Italian",
@@ -322,46 +346,16 @@ export const lans = [
     flag:'ru'
   },
   {
-    name: "Spanish",
-    text: "Spanish",
-    id: 'es',
-    flag:'es'
-  },
-  {
-    name: "Turkish",
-    text: "Turkish",
-    id: 'tr',
-    flag:'tr'
-  },
-  {
-    name: "Czech",
-    text: "Czech",
-    id: 'cs',
-    flag:'cz'
-  },
-  {
-    name: "Bulgarian",
-    text: "Bulgarian",
-    id: 'bg',
-    flag:'bg'
-  },
-  {
-    name: "Hungarian",
-    text: "Hungarian",
-    id: 'hu',
-    flag:'hu'
-  },
-  {
-    name: "Indonesian",
-    text: "Indonesian",
-    id: 'id',
-    flag:'id'
-  },
-  {
     name: "Slovak",
     text: "Slovak",
     id: 'sk',
     flag:'sk'
+  },
+  {
+    name: "Spanish",
+    text: "Spanish",
+    id: 'es',
+    flag:'es'
   },
   {
     name: "Thai",
@@ -370,9 +364,16 @@ export const lans = [
     flag:'th'
   },
   {
+    name: "Turkish",
+    text: "Turkish",
+    id: 'tr',
+    flag:'tr'
+  },
+  {
     name: "Vietnamese",
     text: "Vietnamese",
     id: 'vi',
     flag:'vn'
   }
 ];
+
