@@ -215,6 +215,13 @@ ko:'Korean',
 zh:'Chinese',
 pt:'Portuguese',
 pl:'Polish',
+cs:'Czech',
+bg:'Bulgarian',
+hu:'Hungarian',
+id:'Indonesian',
+sk:'Slovak',
+th:'Thai',
+vi:'Vietnamese',
 }
 export const flag = {
 en:'gb',
@@ -232,6 +239,13 @@ ko:'kr',
 zh:'cn',
 pt:'pt',
 pl:'pl',
+cs:'cz',
+bg:'bg',
+hu:'hu',
+id:'id',
+sk:'sk',
+th:'th',
+vi:'vn',
 }
 
 export const lans = [
@@ -318,5 +332,47 @@ export const lans = [
     text: "Turkish",
     id: 'tr',
     flag:'tr'
+  },
+  {
+    name: "Czech",
+    text: "Czech",
+    id: 'cs',
+    flag:'cz'
+  },
+  {
+    name: "Bulgarian",
+    text: "Bulgarian",
+    id: 'bg',
+    flag:'bg'
+  },
+  {
+    name: "Hungarian",
+    text: "Hungarian",
+    id: 'hu',
+    flag:'hu'
+  },
+  {
+    name: "Indonesian",
+    text: "Indonesian",
+    id: 'id',
+    flag:'id'
+  },
+  {
+    name: "Slovak",
+    text: "Slovak",
+    id: 'sk',
+    flag:'sk'
+  },
+  {
+    name: "Thai",
+    text: "Thai",
+    id: 'th',
+    flag:'th'
+  },
+  {
+    name: "Vietnamese",
+    text: "Vietnamese",
+    id: 'vi',
+    flag:'vn'
   }
 ];

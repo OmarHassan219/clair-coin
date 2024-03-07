@@ -119,6 +119,7 @@ const dir = document.body.dir;
                         </svg>
                       </div>
                       <nav
+                        style={{overflowY:"scroll" , height:"250px"}}
                         className={`dropdown-list w-dropdown-list ${
                           open ? "w--open" : ""
                         }`}
