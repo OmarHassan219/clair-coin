@@ -119,12 +119,12 @@ const dir = document.body.dir;
                         </svg>
                       </div>
                       <nav
-                        style={{overflowY:"scroll" , height:"250px"}}
+                        style={{overflowY:"scroll" , height:"calc( 100vh - 100px )"}}
                         className={`dropdown-list w-dropdown-list ${
                           open ? "w--open" : ""
                         }`}
                       >
-                        <div role="list" className="w-locales-items">
+                        <div role="list" className="w-locales-items"  style={{height:"fit-content"}} >
                           {lans.map((item,idx) => (
                             <span
                               onClick={() => handleSelectLanguage(item.id, item.name)}
