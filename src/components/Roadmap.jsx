@@ -56,7 +56,7 @@ const Roadmap = ({language}) => {
           </div>
           <div id="w-node-_9fa84366-f0b0-d26b-8b85-5d33215e881c-85e878c5" className="line-wrapper">
             <div id="w-node-_341210c5-70c2-2a97-56fa-ca81c0d248e1-85e878c5" className="dark-bg-line" />
-            <div id="w-node-_369595ff-917c-9657-1f7a-33f6ca519bf5-85e878c5" className="dark-bg-sblue" ref={line} style={{height: `${itemHeight}%`}}>
+            <div id="w-node-_369595ff-917c-9657-1f7a-33f6ca519bf5-85e878c5" className="dark-bg-sblue" ref={line} style={{ height: `${itemHeight}%`, transition: 'height 0.4s ease' }}>
               <div className="circle" />
             </div>
           </div>

@@ -1248,6 +1248,7 @@ html input[disabled] {
   background-color: var(--sky-blue);
   border-radius: 20px;
   position: relative;
+  
 }
 
 .video-avartar {
